@@ -1,0 +1,31 @@
+152a153
+>     /*
+154a156
+> 	*/
+157c159,160
+<     int isdig = 1;
+---
+>     /*
+>     int isdig = 0;
+178a182
+>     */
+180c184
+<     SDL_GetDefaultAudioInfo(&RaineSoundCard,&gotspec,0);
+---
+>     //SDL_GetDefaultAudioInfo(&RaineSoundCard,&gotspec,0);
+804c808
+<     if(raine_cfg.show_fps_mode>2) ProfileStart(PRO_SOUND);
+---
+>     //if(raine_cfg.show_fps_mode>2) ProfileStart(PRO_SOUND);
+809c813
+< 	if(raine_cfg.show_fps_mode>2) ProfileStop(PRO_SOUND);
+---
+> 	//if(raine_cfg.show_fps_mode>2) ProfileStop(PRO_SOUND);
+918c922
+< 	if(raine_cfg.show_fps_mode>2) ProfileStop(PRO_SOUND);
+---
+> 	//if(raine_cfg.show_fps_mode>2) ProfileStop(PRO_SOUND);
+1050c1054
+<     if(raine_cfg.show_fps_mode>2) ProfileStop(PRO_SOUND);
+---
+>     //if(raine_cfg.show_fps_mode>2) ProfileStop(PRO_SOUND);

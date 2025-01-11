@@ -1,0 +1,36 @@
+41c41
+< # USE_MUSASHI = 2
+---
+> USE_MUSASHI = 2
+60c60
+< # NO_ASM = 1
+---
+> NO_ASM = 1
+1396c1396
+< 
+---
+> 	
+1398,1400c1398,1400
+< 	xgettext --omit-header -C -k_ -kgettext -d raine -s -o locale/tmp `find source -name '*.c*'|grep -v source/Musashi`
+< 	cat locale/header locale/tmp > locale/raine.pot
+< 	rm -f locale/tmp
+---
+> 
+> 
+> 
+1403c1403
+< 	msgfmt -c -v -o $@ $<
+---
+> 
+1406c1406
+< 	msgfmt -c -v -o $@ $<
+---
+> 
+1409c1409
+< 	msgfmt -c -v -o $@ $<
+---
+> 
+1412c1412
+< 	msgfmt -c -v -o $@ $<
+---
+> 
