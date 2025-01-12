@@ -11,8 +11,8 @@
 
 rp_module_id="raine"
 rp_module_desc="raine emulator"
-rp_module_help="ROM Extensions: .zip .7z\n\nCopy your raine roms to either $romdir/raine or\n$romdir/arcade"
-rp_module_licence="GPL2 https://raw.githubusercontent.com/rainedev/raine/master/COPYING"
+rp_module_help="ROM Extensions: .zip .7z\n\nCopy your raine roms to $romdir/raine\nCopy your emudx files to $romdir/raine/emudx"
+rp_module_licence="unknown https://raw.githubusercontent.com/zelurker/raine/refs/heads/master/source/Musashi/readme.txt"
 rp_module_repo="git https://github.com/zelurker/raine.git master"
 rp_module_section="exp"
 rp_module_flags=""
@@ -68,10 +68,10 @@ function configure_raine() {
         # Create the configuration directory for the raine config files
         moveConfigDir "/home/$user/.raine" "$md_conf_root/$system"
         
-        cp -f -r "$md_build/fonts" "$md_conf_root/$system"
+		cp -f -r "$md_build/fonts" "$md_conf_root/$system"
 		cp -f "$md_data/rainex_sdl.cfg" "$md_conf_root/$system/config/rainex_sdl.cfg"
 		sed -i "s/\~/\/pi\/\/$user\//g" "$md_conf_root/$system/config/rainex_sdl.cfg"
-		chown $user:$user -R "$md_conf_root/$system"
+		chown $__user:$__group -R "$md_conf_root/$system"
 	fi
 	
     addEmulator 0 "$md_id" "$system" "$md_inst/raine %BASENAME%"
