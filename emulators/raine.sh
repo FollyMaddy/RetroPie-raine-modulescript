@@ -60,6 +60,8 @@ function configure_raine() {
         for raine_sub_dir in artwork emudx screens; do
             mkRomDir "$system/$raine_sub_dir"
         done
+        
+        # Create required RAINE config directories underneath the config directory
         local raine_config_sub_dir
         for raine_config_sub_dir in config debug demos fonts ips savedata savegame; do
             mkUserDir "$md_conf_root/$system/$raine_config_sub_dir"
@@ -68,10 +70,14 @@ function configure_raine() {
         # Create the configuration directory for the raine config files
         moveConfigDir "/home/$user/.raine" "$md_conf_root/$system"
         
-		cp -f -r "$md_build/fonts" "$md_conf_root/$system"
-		cp -f "$md_data/rainex_sdl.cfg" "$md_conf_root/$system/config/rainex_sdl.cfg"
-		sed -i "s/\~/\/pi\/\/$user\//g" "$md_conf_root/$system/config/rainex_sdl.cfg"
-		chown $__user:$__group -R "$md_conf_root/$system"
+        # Move fonts to the config directory
+        cp -f -r "$md_build/fonts" "$md_conf_root/$system"
+        # Copy the config file to the config directory
+        cp -f "$md_data/rainex_sdl.cfg" "$md_conf_root/$system/config/rainex_sdl.cfg"
+        # Ensure the correct username is used in the paths, within the config file
+        sed -i "s/\~/\/pi\/\/$user\//g" "$md_conf_root/$system/config/rainex_sdl.cfg"
+        # Ensure the correct user rights for all files in the config directory
+        chown $__user:$__group -R "$md_conf_root/$system"
 	fi
 	
     addEmulator 0 "$md_id" "$system" "$md_inst/raine %BASENAME%"
