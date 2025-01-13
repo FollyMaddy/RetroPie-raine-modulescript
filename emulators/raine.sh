@@ -21,6 +21,7 @@ function depends_raine() {
     # Install required libraries required for compilation and running
     local depends=(nasm liblua5.4-dev libcurl4-gnutls-dev libssl-dev libpng-dev)
 	getDepends "${depends[@]}"
+	# libsdl2-dev libsdl2-image-dev needed but not installed by the script, use RetroPie-Setup or your own method
 }
 
 function sources_raine() {
@@ -32,9 +33,9 @@ function sources_raine() {
 function build_raine() {
     # More memory is required for 64bit platforms
     if isPlatform "64bit"; then
-        rpSwap on 10240
+        rpSwap on 4096
     else
-        rpSwap on 8192
+        rpSwap on 2048
     fi
 
     make
