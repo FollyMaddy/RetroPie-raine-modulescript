@@ -19,7 +19,7 @@ rp_module_flags=""
 
 function depends_raine() {
     # Install required libraries required for compilation and running
-    local depends=(nasm liblua5.4-dev libcurl4-gnutls-dev libssl-dev libpng-dev devscripts lintian)
+    local depends=(nasm liblua5.4-dev libcurl4-gnutls-dev libssl-dev libpng-dev)
 	getDepends "${depends[@]}"
 }
 
