@@ -12,7 +12,7 @@
 rp_module_id="raine"
 rp_module_desc="raine emulator"
 rp_module_help="ROM Extensions: .zip .7z\n\nCopy your raine roms to $romdir/raine\nCopy your emudx files to $romdir/raine/emudx"
-rp_module_licence="unknown https://raw.githubusercontent.com/zelurker/raine/refs/heads/master/source/Musashi/readme.txt"
+rp_module_licence="Source-available https://raw.githubusercontent.com/zelurker/raine/refs/heads/master/source/Musashi/readme.txt"
 rp_module_repo="git https://github.com/zelurker/raine.git master"
 rp_module_section="exp"
 rp_module_flags=""
