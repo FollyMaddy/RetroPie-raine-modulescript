@@ -21,7 +21,7 @@ function depends_raine() {
     # Install required libraries required for compilation and running
     local depends=(nasm liblua5.4-dev libcurl4-gnutls-dev libssl-dev libpng-dev)
 	getDepends "${depends[@]}"
-	# libsdl2-dev libsdl2-image-dev needed but not installed by the script, use RetroPie-Setup or your own method
+	# libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev needed but not installed by the script yet, use RetroPie-Setup or your own method
 }
 
 function sources_raine() {
