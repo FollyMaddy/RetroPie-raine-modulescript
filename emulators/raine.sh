@@ -78,7 +78,7 @@ function configure_raine() {
         # Ensure the correct username is used in the paths, within the config file
         sed -i "s/\~/\/pi\/\/$user\//g" "$md_conf_root/$system/config/rainex_sdl.cfg"
         # Ensure the correct user rights for all files in the config directory
-        chown $__user:$__group -R "$md_conf_root/$system"
+        chown $user:$user -R "$md_conf_root/$system"
 	fi
 	
     addEmulator 0 "$md_id" "$system" "$md_inst/raine %BASENAME%"
